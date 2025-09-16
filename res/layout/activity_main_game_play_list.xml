@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gameList"
+    android:background="#07233A"
+    tools:context=".MainActivityGamePlayList">
+
+    <!-- Scrollable area inside ConstraintLayout    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_410sdp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- scroll content -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewNumberAction"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/mathquiz"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                  />
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewMissingNumber"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/missingnumber"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewNumberAction"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewNumberAction"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewNumberAction"
+                   />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewHelicopter"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/helicopterbg"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewMissingNumber"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewMissingNumber"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewMissingNumber" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewTicTocToe"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/tictioctoe"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewHelicopter"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewHelicopter"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewHelicopter"
+                    tools:ignore="ImageContrastCheck" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewAirPlane"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/shape"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewTicTocToe"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewTicTocToe"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewTicTocToe"
+                    app:srcCompat="@drawable/spaceshooter" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <!-- Other non-scrolling items can stay here, like textViewPlayerOne -->
+
+        <TextView
+            android:id="@+id/textViewExit"
+            android:layout_width="127dp"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="Exit"
+            android:textColor="#B47A68"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:background="#DD434141"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.936"
+            tools:ignore="TextSizeCheck" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/_52sdp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.125"
+            app:srcCompat="@drawable/gamebox" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewSetting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.324"
+            app:srcCompat="@drawable/music" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewCoin"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.829"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.34"
+            app:srcCompat="@drawable/coin" />
+
+        <TextView
+            android:id="@+id/textViewCoin"
+            android:layout_width="70dp"
+            android:layout_height="28dp"
+            android:text="10"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCoin"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCoin"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCoin"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!-- Floating control buttons (not inside scroll area) -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="16dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewPlayerOne"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            app:srcCompat="@drawable/contact" />
+
+        <TextView
+            android:id="@+id/textViewPlayerOneScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewPlayerTow"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            app:srcCompat="@drawable/contacto" />
+
+        <TextView
+            android:id="@+id/textViewPlayerTwoScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+</FrameLayout>
