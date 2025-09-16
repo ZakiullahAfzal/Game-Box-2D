@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07233A"
+    tools:context=".TicTocToe">
+
+    <TextView
+        android:id="@+id/textViewLogo"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginBottom="@dimen/_52sdp"
+        android:gravity="center"
+        android:text="@string/tic_toc_toe"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_25ssp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTicTocToe" />
+
+    <TextView
+        android:id="@+id/exit"
+        android:layout_width="73dp"
+        android:layout_height="112dp"
+        android:gravity="center"
+        android:rotation="90"
+        android:text="@string/exit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <TextView
+        android:id="@+id/textViewBack"
+        android:layout_width="140dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/back"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutTicTocToe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutTicTocToe"
+        android:layout_width="@dimen/_224sdp"
+        android:layout_height="@dimen/_270sdp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/btn_play"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:textSize="@dimen/_20ssp"
+            android:text="@string/play"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_mode"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:textSize="@dimen/_20ssp"
+            android:text="@string/easy"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:background="@drawable/shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_bot"
+            app:layout_constraintVertical_bias="0.115" />
+
+        <TextView
+            android:id="@+id/btn_bot"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_20ssp"
+            android:text="@string/bot"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_play" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="652dp"
+        android:layout_height="550dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- First Row -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="650dp"
+            android:layout_height="160dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image1"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image2"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image3"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+        </LinearLayout>
+
+        <!-- First Row Divider -->
+        <View
+            android:id="@+id/divider13"
+            android:layout_width="630dp"
+            android:layout_height="35dp"
+            android:background="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <!-- Second Row -->
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="650dp"
+            android:layout_height="160dp"
+            android:gravity="center_vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider13">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image4"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image5"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image6"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+        </LinearLayout>
+
+        <!-- Second Row Divider -->
+        <View
+            android:id="@+id/divider14"
+            android:layout_width="630dp"
+            android:layout_height="35dp"
+            android:background="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <!-- Third Row -->
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="650dp"
+            android:layout_height="160dp"
+            android:gravity="center_vertical"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider14">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image7"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image8"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image9"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_shadow_end_color" />
+        </LinearLayout>
+
+        <!-- Win Lines (scaled up for 800dp) -->
+        <View
+            android:id="@+id/dividerWin7"
+            android:layout_width="35dp"
+            android:layout_height="700dp"
+            android:background="#CCFFFFFF"
+            android:rotation="45"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dividerWin8"
+            android:layout_width="35dp"
+            android:layout_height="700dp"
+            android:background="#CCFFFFFF"
+            android:rotation="-45"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dividerWin3"
+            android:layout_width="35dp"
+            android:layout_height="600dp"
+            android:background="#CCFFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/dividerWin7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dividerWin7"
+            app:layout_constraintTop_toTopOf="@+id/dividerWin7" />
+
+        <View
+            android:id="@+id/dividerWin1"
+            android:layout_width="35dp"
+            android:layout_height="600dp"
+            android:background="#CCFFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dividerWin7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dividerWin4"
+            android:layout_width="630dp"
+            android:layout_height="35dp"
+            android:background="#CCFFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/divider13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dividerWin1" />
+
+        <View
+            android:id="@+id/dividerWin6"
+            android:layout_width="650dp"
+            android:layout_height="35dp"
+            android:background="#CCFFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider14" />
+
+        <View
+            android:id="@+id/dividerWin5"
+            android:layout_width="650dp"
+            android:layout_height="35dp"
+            android:background="#CDFAF7F7"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/dividerWin6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerWin4" />
+
+        <View
+            android:id="@+id/dividerWin2"
+            android:layout_width="35dp"
+            android:layout_height="600dp"
+            android:background="#CBFFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewMode"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutTicTocToe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/easy" />
+
+    <TextView
+        android:id="@+id/textViewRestart"
+        android:layout_width="@dimen/_100ssp"
+        android:layout_height="@dimen/_40ssp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:text="Restart"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
